@@ -3,10 +3,10 @@
 
 ## Installation
 
-- Save the directory somewhere on your server, for example in your home directory
-- Navigate to the directory
+- Clone the repo with `git clone https://github.com/ItsANameToo/pie-pay.git`
+- Navigate to the directory (for devnet: run `git checkout develop`)
 - Run `yarn`
-- Run `cp .env.example .env` following by `nano .env`. You should see a configuration file like below:
+- Run `cp .env.example .env` followed by `nano .env`. You should see a configuration file like below:
 
 ```bash
 # Recipient wallet for funds
