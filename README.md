@@ -37,7 +37,7 @@ HOST=https://dexplorer.ark.io/api
 - Run `crontab -e` and move to the end of the file to add a cronjob to have the script run on an interval. You can define your own by checking https://crontab.guru . An example that would run the script every 30 minutes is:
 
 ```bash
-*/30 * * * * cd ~/pay-pie && /usr/local/bin/node index.js > /dev/null 2>&1
+*/30 * * * * cd ~/pie-pay && /usr/local/bin/node index.js > /dev/null 2>&1
 ```
 
 Make sure to substitute `/usr/local/bin/node` with the path you got when you ran `which node` and change `~/pie-pay` to the path at which you can find the directory that contains the script.
