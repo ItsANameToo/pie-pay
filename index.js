@@ -16,15 +16,15 @@ const main = async () => {
         // Check if balance > 0
         if (balance.isGreaterThan(Utils.BigNumber.ZERO)) {
             // Create tx to send full balance minus fee to recipient wallet
-            const fee = 0.015 * 1e8;
+            const fee = Utils.BigNumber.make(process.env.FEE || 0.015).times(1e8);
 
             const transaction = Transactions.BuilderFactory.transfer()
                 .version(2)
                 .nonce(nonce.toFixed())
                 .senderPublicKey(Identities.PublicKey.fromPassphrase(process.env.PASSPHRASE))
                 .recipientId(process.env.RECIPIENT)
-                .fee(fee)
-                .amount(balance.minus(Utils.BigNumber.make(fee)).toFixed())
+                .fee(fee.toFixed())
+                .amount(balance.minus(fee).toFixed())
                 .expiration(0)
                 .sign(process.env.PASSPHRASE)
                 .build();
